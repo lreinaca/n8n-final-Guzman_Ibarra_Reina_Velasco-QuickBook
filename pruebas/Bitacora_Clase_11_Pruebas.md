@@ -212,7 +212,7 @@ Precondición común: workflow con credenciales propias, calendario, hojas y tab
 
 - **Revisión asociada:** RC-12
 - **Qué se comprueba:** Fallo de modelo Gemini
-- **Entrada o condición:** Modelo gemini-2.5-flash no disponible
+- **Entrada o condición:** Modelo gemini-3.5-flash-lite
 - **Resultado esperado:** ia_no_disponible y continuidad de reserva
 - **Efecto que no debe ocurrir:** Fallo total
 - **Resultado observado:** El nodo de modelo muestra error 404.
