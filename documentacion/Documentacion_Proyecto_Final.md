@@ -270,9 +270,7 @@ Reglas:
 | IA no disponible o respuesta no utilizable | La reserva continúa con `ia_no_disponible` | CP-12 |
 | Falla de Google Calendar en la reserva | Sin tratamiento específico en el flujo; n8n conserva la ejecución fallida en su historial. Se declara como limitación | CP-07 |
 | Operación parcial (evento creado y fallo en un registro) | Sin reversión ni reintento automático. Recuperación manual: comparar el calendario con las hojas y con Baserow, y completar el registro faltante. Se declara como limitación | CP-08 |
-| Coherencia entre la respuesta y los efectos | La respuesta se envía en paralelo con los registros; por eso se contrasta con el estado real de los tres destinos | CP-13, CP-14, CP-15 |
-| Registro central de errores | El workflow de manejo de errores planteado inicialmente se retiró; la trazabilidad se limita al historial de ejecuciones de n8n | CP-16 |
-| Zona horaria de las fechas | `Preparar Solicitud` usa explícitamente `America/Bogota`; la consulta de horas (`Validar fecha`) no la indica | CP-03 (fechas límite) |
+| Coherencia entre la respuesta y los efectos | La respuesta se envía en paralelo con los registros; por eso se contrasta con el estado real de los tres destinos 
 
 ## 8. Funciones implementadas, alcance excluido y limitaciones
 
@@ -323,9 +321,9 @@ Se definieron 12 casos que recorren el flujo de reserva: el funcionamiento norma
 
 | Campo | Valor |
 |---|---|
-| `nombre` | Laura Gómez |
+| `nombre` | Cesar Andres Guzman Mendoza |
 | `whatsapp` | 3001234567 |
-| `correo` | laura.gomez@ejemplo.com |
+| `correo` | cesarandresguzman27@ejemplo.com |
 | `servicio` | consulta medica |
 | `fecha_preferida` | fecha a 3 días de hoy (formato `AAAA-MM-DD`) |
 | `hora_preferida` | 10:00 |
