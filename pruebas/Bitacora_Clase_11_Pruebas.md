@@ -186,11 +186,11 @@ Precondición común: workflow con credenciales propias, calendario, hojas y tab
 
 - **Revisión asociada:** RC-10
 - **Qué se comprueba:** Clasificación de urgencia
-- **Entrada o condición:** Motivo urgente; texto exacto por confirmar en la captura
+- **Entrada o condición:** Categoría: urgente
 - **Resultado esperado:** urgente y requiere_revision=true, sin decidir reserva
 - **Efecto que no debe ocurrir:** Autorizar o bloquear reserva por IA
 - **Resultado observado:** Existe archivo de evidencia; su contenido no se ha comprobado en esta revisión.
-- **Conclusión:** Cumple. Se evidencia la clasificación del motivo como urgente y la activación del indicador de revisión, siempre que ambos valores aparezcan en la captura.
+- **Conclusión:** Cumple. Se evidencia la clasificación de la categoría como urgente y la activación del indicador de revisión.
 - **Evidencia:** [Ver captura CP-10](evidencias/CP-10_Clasificacion_motivo_urgente.jpeg)
 
 ***
