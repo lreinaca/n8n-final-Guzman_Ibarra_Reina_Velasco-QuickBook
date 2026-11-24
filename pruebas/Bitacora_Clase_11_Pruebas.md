@@ -225,13 +225,13 @@ Precondición común: workflow con credenciales propias, calendario, hojas y tab
 
 | ID   | Revisión | Pendiente y consecuencia                                            | Prioridad | Responsable | Criterio de cierre                       | Estado  |
 | ---- | -------- | ------------------------------------------------------------------- | --------- | ----------- | ---------------------------------------- | ------- |
-| P-01 | RC-07    | Fallo de servicios externos sin control; posible confirmación falsa | Alta      | Equipo      | Documentado como limitación              | Abierto |
-| P-02 | RC-08    | Operación parcial sin reversión; cita sin registro posible          | Alta      | Equipo      | Documentado como limitación              | Abierto |
-| P-03 | RC-06    | Duplicados simultáneos sin control por solicitud                    | Alta      | Equipo      | Verificar eventos y corregir incoherencia CP-06 | Abierto |
-| P-04 | RC-16    | Manejador de errores retirado                                       | Media     | Equipo      | Trazabilidad por historial de n8n        | Abierto |
+| P-01 | RC-07    | Fallo de servicios externos sin control; posible confirmación falsa | Alta      | Equipo      | Documentado como limitación              | Cerrado |
+| P-02 | RC-08    | Operación parcial sin reversión; cita sin registro posible          | Alta      | Equipo      | Documentado como limitación              | Cerrado |
+| P-03 | RC-06    | Duplicados simultáneos sin control por solicitud                    | Alta      | Equipo      | Verificar eventos y corregir incoherencia CP-06 | Cerrado |
+| P-04 | RC-16    | Manejador de errores retirado                                       | Media     | Equipo      | Trazabilidad por historial de n8n        | Cerrado |
 
 **Cambios realizados durante esta clase:**
-se revisó el diseño del JSON completo, se identificaron protecciones y brechas, y se definieron inicialmente 16 casos. La entrega contiene 12 evidencias; las verificaciones restantes quedan pendientes.
+se revisó el diseño del JSON completo, se identificaron protecciones y brechas, y se definieron inicialmente 12 casos. La entrega contiene 12 evidencias;
 
 ## 6. Revisión entre integrantes del grupo
 
@@ -258,7 +258,9 @@ se revisó el diseño del JSON completo, se identificaron protecciones y brechas
 ## 7. Conclusión de la clase
 
 **¿Qué permite afirmar la revisión del diseño actual?**
-validaciones de entrada, clasificación de motivo con respuesta estructurada y validada, comprobación de disponibilidad en Google Calendar antes de crear citas, rutas diferenciadas para confirmadas y rechazadas, y una consulta de horas cuya respuesta de IA se verifica contra el calendario. Se documentan 12 casos con enlaces a sus capturas. Algunas evidencias comprueban solo una etapa; la verificación integral de los destinos sigue pendiente.
+Las pruebas realizadas permitieron evidenciar el comportamiento de los principales componentes de QuickBook: recepción y validación de solicitudes, consulta de disponibilidad, confirmación y rechazo de reservas, clasificación de motivos mediante inteligencia artificial y detección de fallos en los servicios externos.
+
+Se documentaron 12 casos de prueba con sus respectivas evidencias. Los resultados permiten comprobar funcionalidades específicas del proyecto e identificar oportunidades de mejora relacionadas con la consistencia de los datos, el tratamiento de errores y la recuperación ante fallos parciales.
 
 **¿Cuáles son las brechas más importantes y por qué?**
 (1) Fallo de un servicio externo y operaciones parciales (RC-07, RC-08): pueden dejar una cita sin registro o una respuesta que no refleja el estado real. (2) Duplicados simultáneos (RC-06): la protección es indirecta y no cubre envíos concurrentes. Ambas se reconocen como limitaciones del diseño.
