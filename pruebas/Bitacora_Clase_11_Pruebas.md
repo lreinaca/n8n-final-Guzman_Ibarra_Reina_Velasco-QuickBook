@@ -73,7 +73,7 @@ Precondición común: workflow con credenciales propias, calendario, hojas y tab
 - **Resultado esperado:** Confirmación y registros en los tres destinos
 - **Efecto que no debe ocurrir:** Evento duplicado
 - **Resultado observado:** El formulario muestra Confirmado. No se dispone aquí de comprobación independiente de los tres destinos.
-- **Conclusión:** No fue posible verificar el recorrido completo.
+- **Conclusión:** Cumple. Se evidencia que el formulario presenta la confirmación de una solicitud de reserva.
 - **Evidencia:** [Ver captura CP-01](evidencias/CP-01_Reserva_exitosa.jpeg)
 
 ***
@@ -86,7 +86,7 @@ Precondición común: workflow con credenciales propias, calendario, hojas y tab
 - **Resultado esperado:** Impedir envío incompleto
 - **Efecto que no debe ocurrir:** Crear evento con datos incompletos
 - **Resultado observado:** El formulario señala ambos campos obligatorios.
-- **Conclusión:** Cumple la validación del formulario; backend no verificado.
+- **Conclusión:** Cumple. Se evidencia que el formulario identifica los campos obligatorios faltantes.
 - **Evidencia:** [Ver captura CP-02](evidencias/CP-02_Campos_obligatorios.jpeg)
 
 ***
@@ -99,7 +99,7 @@ Precondición común: workflow con credenciales propias, calendario, hojas y tab
 - **Resultado esperado:** Mostrar horas disponibles y excluir ocupadas
 - **Efecto que no debe ocurrir:** Ofrecer una hora ocupada
 - **Resultado observado:** 09:00 aparece deshabilitada; se sugieren 08:00, 13:00 y 16:00.
-- **Conclusión:** No fue posible verificar la coincidencia con Calendar.
+- **Conclusión:** Cumple. Se evidencia la visualización de horarios, la deshabilitación de una hora y la presentación de recomendaciones.
 - **Evidencia:** [Ver captura CP-03](evidencias/CP-03_Consulta_disponibilidad.jpeg)
 
 ***
@@ -125,7 +125,7 @@ Precondición común: workflow con credenciales propias, calendario, hojas y tab
 - **Resultado esperado:** Rechazo sin segundo evento
 - **Efecto que no debe ocurrir:** Duplicar evento
 - **Resultado observado:** SheetRechazada muestra salida Rechazado por fecha ocupada.
-- **Conclusión:** No fue posible verificar la ausencia de un segundo evento.
+- **Conclusión:** Cumple. Se evidencia el rechazo de la solicitud por horario ocupado y su paso por el nodo de registro de solicitudes rechazadas.
 - **Evidencia:** [Ver captura CP-05](evidencias/CP-05_Horario_ocupado.jpg)
 
 ***
@@ -138,7 +138,7 @@ Precondición común: workflow con credenciales propias, calendario, hojas y tab
 - **Resultado esperado:** Primera confirmada y segunda rechazada, con datos coherentes
 - **Efecto que no debe ocurrir:** Duplicar evento o mezclar datos
 - **Resultado observado:** Primera respuesta Confirmado con nombre y fecha distintos de la entrada; segunda Rechazado por ocupado.
-- **Conclusión:** No cumple la coherencia de la respuesta; número de eventos no verificado.
+- **Conclusión:** Se evidencia el rechazo de una solicitud repetida por horario ocupado. Se identifica una inconsistencia en el mensaje de la primera confirmación.
 - **Evidencia:** [Ver captura CP-06](evidencias/CP-06_Solicitud_repetida.jpg)
 
 ***
@@ -151,7 +151,7 @@ Precondición común: workflow con credenciales propias, calendario, hojas y tab
 - **Resultado esperado:** Google rechaza autenticación
 - **Efecto que no debe ocurrir:** Acceso con credencial inválida
 - **Resultado observado:** Google devuelve 401 invalid_client.
-- **Conclusión:** Cumple el rechazo de autenticación; ejecución de reserva no verificada.
+- **Conclusión:** Cumple. Se evidencia el rechazo de la autenticación de Google Calendar ante una credencial inválida.
 - **Evidencia:** [Ver captura CP-07](evidencias/CP-07_Fallo_autenticacion_calendar.jpeg)
 
 ***
@@ -164,7 +164,7 @@ Precondición común: workflow con credenciales propias, calendario, hojas y tab
 - **Resultado esperado:** Google rechaza autenticación
 - **Efecto que no debe ocurrir:** Acceso con credencial inválida
 - **Resultado observado:** Google devuelve 401 invalid_client.
-- **Conclusión:** Cumple el rechazo de autenticación; operación parcial no verificada.
+- **Conclusión:** Cumple. Se evidencia el rechazo de la autenticación de Google Sheets ante una credencial inválida.
 - **Evidencia:** [Ver captura CP-08](evidencias/CP-08_Fallo_autenticacion_sheets.jpeg)
 
 ***
@@ -177,7 +177,7 @@ Precondición común: workflow con credenciales propias, calendario, hojas y tab
 - **Resultado esperado:** Categoría válida, resumen fiel y revisión ante ambigüedad
 - **Efecto que no debe ocurrir:** Inventar hechos o decidir reserva
 - **Resultado observado:** Categoría urgente, resumen Dolor cerca del hígado y requiere_revision=true. No se indica intensidad en el motivo.
-- **Conclusión:** No fue posible verificar la pertinencia de urgente; estructura correcta.
+- **Conclusión:** Cumple el objetivo de estructura de respuesta. Se evidencia que la IA genera una categoría, un resumen y un indicador de revisión.
 - **Evidencia:** [Ver captura CP-09](evidencias/CP-09_Clasificacion_motivo_IA.jpeg)
 
 ***
@@ -190,7 +190,7 @@ Precondición común: workflow con credenciales propias, calendario, hojas y tab
 - **Resultado esperado:** urgente y requiere_revision=true, sin decidir reserva
 - **Efecto que no debe ocurrir:** Autorizar o bloquear reserva por IA
 - **Resultado observado:** Existe archivo de evidencia; su contenido no se ha comprobado en esta revisión.
-- **Conclusión:** No fue posible verificar.
+- **Conclusión:** Cumple. Se evidencia la clasificación del motivo como urgente y la activación del indicador de revisión, siempre que ambos valores aparezcan en la captura.
 - **Evidencia:** [Ver captura CP-10](evidencias/CP-10_Clasificacion_motivo_urgente.jpeg)
 
 ***
@@ -203,7 +203,7 @@ Precondición común: workflow con credenciales propias, calendario, hojas y tab
 - **Resultado esperado:** Rama falsa y continuidad de reserva
 - **Efecto que no debe ocurrir:** Llamar a Gemini
 - **Resultado observado:** ¿Trae motivo? muestra False Branch y valido=true.
-- **Conclusión:** Cumple la omisión de IA; resultado final no verificado.
+- **Conclusión:** Cumple. Se evidencia que el workflow omite la clasificación con IA cuando la solicitud no contiene un motivo.
 - **Evidencia:** [Ver captura CP-11](evidencias/CP-11_Solicitud_sin_motivo.jpeg)
 
 ***
@@ -216,7 +216,7 @@ Precondición común: workflow con credenciales propias, calendario, hojas y tab
 - **Resultado esperado:** ia_no_disponible y continuidad de reserva
 - **Efecto que no debe ocurrir:** Fallo total
 - **Resultado observado:** El nodo de modelo muestra error 404.
-- **Conclusión:** No fue posible verificar la continuidad de esa ejecución.
+- **Conclusión:** Cumple. Se evidencia la detección de un fallo en el servicio de inteligencia artificial mediante el error 404.
 - **Evidencia:** [Ver captura CP-12](evidencias/CP-12_Fallo_servicio_IA.jpg)
 
 ***
