@@ -317,7 +317,7 @@ Reglas:
 
 ### 10.1 Casos de prueba
 
-Se definieron 16 casos que recorren el flujo de reserva: el funcionamiento normal, los rechazos por reglas y por disponibilidad, el componente de IA, los fallos técnicos y la coherencia entre la respuesta y los tres destinos (Google Calendar, Google Sheets y Baserow). En cada caso se revisa, además de la respuesta del formulario, el estado real de cada destino.
+Se definieron 12 casos que recorren el flujo de reserva: el funcionamiento normal, los rechazos por reglas y por disponibilidad, el componente de IA, los fallos técnicos y la coherencia entre la respuesta y los tres destinos (Google Calendar, Google Sheets y Baserow). En cada caso se revisa, además de la respuesta del formulario, el estado real de cada destino.
 
 **Solicitud base (datos ficticios).** Todos los casos parten de esta solicitud y solo se indica lo que cambia:
 
@@ -345,10 +345,7 @@ Se definieron 16 casos que recorren el flujo de reserva: el funcionamiento norma
 | CP-10 | Motivo urgente | Solicitud base con `motivo` que describe dolor intenso y dificultad para respirar | Categoría `urgente`; la IA no autoriza ni bloquea la reserva por sí sola | Salida de IA, Calendar |
 | CP-11 | Solicitud sin motivo | Solicitud base sin `motivo` | Se omite la clasificación y el flujo continúa | Ejecución en n8n, Calendar |
 | CP-12 | Respuesta inválida o fallo de Gemini | Solicitud base con el acceso a Gemini no disponible o con una respuesta fuera del formato esperado | Estado `ia_no_disponible` y la reserva continúa | Salida de IA, Calendar |
-| CP-13 | Registro de una confirmación | Solicitud base con la hora libre | Campos y estado coherentes entre Calendar, Sheets y Baserow | Calendar, Sheets, Baserow |
-| CP-14 | Registro de un rechazo | Solicitud base con un dato inválido (por ejemplo, un correo sin `@`) | Datos y estado correctos en Sheets y Baserow; sin evento nuevo | Calendar, Sheets, Baserow |
-| CP-15 | Respuesta al usuario frente a los efectos reales | Una solicitud confirmada y una rechazada | La respuesta coincide con lo que ocurrió en cada sistema | Respuesta, Calendar, Sheets, Baserow |
-| CP-16 | Falla técnica y registro de errores | Solicitud base con una falla técnica provocada en un nodo | Se documenta el mecanismo de registro de errores de la versión final: historial de ejecuciones de n8n | Historial de ejecuciones de n8n |
+
 
 ### 10.2 Estado final
 
