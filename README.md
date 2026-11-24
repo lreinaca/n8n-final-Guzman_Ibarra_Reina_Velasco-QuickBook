@@ -190,3 +190,19 @@ Se recomienda configurar las columnas de WhatsApp, fecha y hora como texto para 
 
 Cada usuario debe utilizar su propia hoja de cálculo y sus propias credenciales. No es necesario tener acceso a los recursos originales del equipo de desarrollo.
 
+## Entregables del proyecto
+
+- [Workflow final de n8n](./workflows/Workflow_Final.json)
+- [Documentación del proyecto](./documentacion/Documentacion_Proyecto_Final.md)
+- [Presentación final](./presentacion/Presentacion_Proyecto_Final.pdf)
+- [Bitácora de pruebas](./pruebas/Bitacora_Clase_11_Pruebas.md)
+
+### Diagramas del proceso
+
+- [Proceso manual](./documentacion/diagramas/Proceso_Manual.png)
+- [Proceso automatizado](./documentacion/diagramas/Proceso_Automatizado.png)
+
+### Evidencias de pruebas
+
+- [Consultar evidencias de ejecución](./pruebas/evidencias/)
+
